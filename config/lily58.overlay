@@ -4,6 +4,7 @@
         zmk,matrix_transform = &default_transform;
     };
 
+    /* This section tells ZMK it's a split keyboard */
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
@@ -27,4 +28,13 @@
             , <&gpio1 13 GPIO_ACTIVE_HIGH>
             ;
     };
+};
+
+/* These settings ensure the left and right sides know who they are */
+&left_encoder {
+    status = "disabled";
+};
+
+&right_encoder {
+    status = "disabled";
 };
